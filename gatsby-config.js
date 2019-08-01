@@ -19,6 +19,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -36,6 +37,19 @@ module.exports = {
       options:{
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      }
+    },
+    {
+			resolve: 'gatsby-plugin-snipcart',
+			options: {
+        apiKey: process.env.SNIPCART_API,
+        autopop:true
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'fr'
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
