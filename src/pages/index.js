@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => (
 
     <BackgroundSection
       img={data.img.childImageSharp.fluid}
-      title="regular joe's"
+      title="Gatsby-Coffee"
       styleClass="default-background"
       />
     <Info />
@@ -46,7 +46,7 @@ export const query = graphql`
           price
           category
           image {
-            fixed(width: 50, height: 50) {
+            fixed(width: 120, height: 120) {
               ...GatsbyContentfulFixed_tracedSVG
             }
           }

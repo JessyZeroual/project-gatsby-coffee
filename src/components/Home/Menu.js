@@ -25,21 +25,20 @@ export default class Menu extends Component {
     if (category === "all") {
       this.setState(() => {
         return { coffeeItems: tempItems };
-      })
+      });
     } else {
       let items = tempItems.filter(({ node }) => node.category === category);
       this.setState(() => {
         return { coffeeItems: items };
-      })
+      });
     }
   };
   render() {
-    console.log(this.state.categories);
     if (this.state.items.length > 0) {
       return (
         <section className="menu py-5">
           <div className="container">
-            <Title title="best of our menu" />
+            <Title title="Menu" />
             {/* categories */}
             <div className="row mb-5">
               <div className=" col-10 mx-auto text-center">
@@ -68,14 +67,15 @@ export default class Menu extends Component {
                     key={node.id}
                   >
                     <div>
-                      <Img fixed={node.image.fixed} />
+                      <Img
+                        fixed={node.image.fixed}
+                        style={{ borderRadius: 10 }}
+                      />
                     </div>
                     {/* item text */}
                     <div className="flex-grow-1 px-3">
                       <div className="d-flex justify-content-between">
-                        <h6 className="mb-0">
-                          <small>{node.title}</small>
-                        </h6>
+                        <h6 className="mb-0 font-weight-bold">{node.title}</h6>
                         <h6 className="mb-0 text-yellow">
                           <small>{node.price}€</small>
                         </h6>

@@ -12,7 +12,7 @@ const getProducts = graphql`
           title
           price
           image {
-            fluid(maxHeight: 426) {
+            fluid(maxHeight: 426, maxWidth: 500) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
@@ -30,7 +30,7 @@ export default function Products() {
         return (
           <section className="py-5">
             <div className="container">
-              <Title title="our products" />
+              <Title title="Produits" />
               <div className="row">
                 {data.products.edges.map(({ node: product }) => {
                     return <Product key={product.id} product={product}/>
